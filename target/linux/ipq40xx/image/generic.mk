@@ -77,7 +77,7 @@ endef
 # (PARTNROFF=1) partition as their rootfs.
 define Build/cros-vboot
 	$(STAGING_DIR_HOST)/bin/cros-vbutil \
-		-k $@ -c "root=PARTUUID=%U/PARTNROFF=1" -o $@.new
+		-k $@ -c "root=PARTUUID=%U/PARTNROFF=1 rootwait" -o $@.new
 	@mv $@.new $@
 endef
 
